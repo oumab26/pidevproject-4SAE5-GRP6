@@ -15,10 +15,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Representative  extends User {
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int IdRep;
     @OneToMany(mappedBy="representative")
     private Set<UniversityOffer> universityOffers;
 

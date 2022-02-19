@@ -18,10 +18,6 @@ enum Domain {
 @NoArgsConstructor
 public class Trainer extends User {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int trainerId;
     @Enumerated(EnumType.STRING)
     private Domain domain;
 

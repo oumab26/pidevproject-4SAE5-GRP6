@@ -18,10 +18,7 @@ enum womenRole {
 @AllArgsConstructor
 @NoArgsConstructor
 public class Women  extends User {
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idWomen;
+
     private String statusCondidacy;
     @Enumerated(EnumType.STRING)
     private womenRole womenRole ;
