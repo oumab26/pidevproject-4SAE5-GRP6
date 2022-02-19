@@ -16,7 +16,7 @@ enum Domain {
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Trainer implements Serializable {
+public class Trainer extends User {
 
     private static final long serialVersionUID = 1L;
     @Id

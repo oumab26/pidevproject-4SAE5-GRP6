@@ -14,7 +14,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Recuiter   implements Serializable{
+public class Recuiter   extends User {
 
     private static final long serialVersionUID = 1L;
     @Id

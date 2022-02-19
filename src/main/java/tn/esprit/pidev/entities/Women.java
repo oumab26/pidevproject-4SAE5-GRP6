@@ -17,7 +17,7 @@ enum womenRole {
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Women  implements Serializable {
+public class Women  extends User {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
