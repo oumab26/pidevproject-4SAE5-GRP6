@@ -19,6 +19,6 @@ public class Expert  extends User {
     @Enumerated(EnumType.STRING)
     private ExpertRole expertrole ;
 
-    @OneToMany (cascade = CascadeType.ALL,mappedBy = "Women")
+    @OneToMany (cascade = CascadeType.ALL,mappedBy = "Expert")
     private Set<Appoitment> appoitments;
 }

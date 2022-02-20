@@ -16,6 +16,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Training implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -37,7 +38,6 @@ public class Training implements Serializable {
 
     @OneToOne
     private Quiz quiz;
-
 
 
 }

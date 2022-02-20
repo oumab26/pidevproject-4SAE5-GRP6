@@ -19,20 +19,20 @@ enum Status {
 @AllArgsConstructor
 @NoArgsConstructor
 public class Condidacy implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idCondidacy;
+    @EmbeddedId
+    private CondidacyPK condidacyPK;
+
     private Status status;
     @Temporal(TemporalType.DATE)
     private Date dateCondidacy;
 
 
-    @ManyToOne
-    @JsonIgnore
+    @MapsId("id")
+    @JoinColumn(name="id")
     private Women womenCondidacy;
-
     @ManyToOne
-    @JsonIgnore
+    @MapsId("idOffer")
+    @JoinColumn(name="id_offer")
     private JobOffer jobOfferCon;
 
 }

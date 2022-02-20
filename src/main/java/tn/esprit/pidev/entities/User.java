@@ -4,15 +4,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.Date;
-import org.springframework.security.core.GrantedAuthority;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
-enum Role implements GrantedAuthority { Admin , Women ,Recruiter ,Expert, Trainer ,Representative ;
-    @Override
-    public String getAuthority() {
-        return "ROLE_" + name();
-    }}
+enum Role  { Admin , Women ,Recruiter ,Expert, Trainer ,Representative
+
+    }
 
 
 
