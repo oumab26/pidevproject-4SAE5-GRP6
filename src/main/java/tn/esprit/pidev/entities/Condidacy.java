@@ -26,13 +26,13 @@ public class Condidacy implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date dateCondidacy;
 
-
+    @ManyToOne
     @MapsId("id")
     @JoinColumn(name="id")
     private Women womenCondidacy;
     @ManyToOne
     @MapsId("idOffer")
-    @JoinColumn(name="id_offer")
+    @JoinColumn(name="id_Offer")
     private JobOffer jobOfferCon;
 
 }
