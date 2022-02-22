@@ -17,18 +17,29 @@ import java.io.Serializable;
 public class TrainerEvaluation implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int trainerEvaluationId;
+    /*  @Id
+      @GeneratedValue(strategy = GenerationType.IDENTITY)
+      private int trainerEvaluationId;*/
+    @EmbeddedId
+    private TrainerEvaluationPK trainerEvaluationPK;
     private int score;
 
-    @ManyToOne
+    /*@ManyToOne
     @JsonIgnore
     private Trainer trainerEv;
 
     @ManyToOne
     @JsonIgnore
+    private Women women;*/
+
+    @ManyToOne
+    @MapsId("id")
+    @JoinColumn(name = "id")
     private Women women;
+    @ManyToOne
+    @MapsId("trainerId")
+    @JoinColumn(name= "trainer_id")
+    private Trainer trainerEv;
 
 
 }

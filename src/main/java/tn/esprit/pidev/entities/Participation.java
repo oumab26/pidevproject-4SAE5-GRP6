@@ -1,38 +1,49 @@
 package tn.esprit.pidev.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
+
 public class Participation implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int participationId;
+    private int participationId;*/
+
+    @EmbeddedId
+    private ParticipationPK participationPK;
+
     private String evalComment;
     private int worning = 0;
     private int certificatNumber;
     private float quizResult; // result after answering quiz
 
-    @ManyToOne
+    /*@ManyToOne
     @JsonIgnore
     private Training trai;
 
      @ManyToOne
     @JsonIgnore
-    private Women woman;
+    private Women woman;*/
 
-
+    @ManyToOne
+    @MapsId("trainingId")
+    @JoinColumn(name = "training_id")
+    private Training trai;
+    @ManyToOne
+    @MapsId("id")
+    @JoinColumn(name= "id")
+    private  Women woman;
 
 }

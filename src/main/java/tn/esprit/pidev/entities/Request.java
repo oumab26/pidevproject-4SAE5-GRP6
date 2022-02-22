@@ -16,17 +16,31 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class Request implements Serializable {
 
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idRequest;
+    private int idRequest;*/
+
+    @EmbeddedId
+    private RequestPK requestPK;
     private String Cv;
     private String Message;
-    @ManyToOne
+   /* @ManyToOne
     @JsonIgnore
     private UniversityOffer universityOf;
 
     @ManyToOne
     @JsonIgnore
-    private Women W;
+    private Women W;*/
+
+    @ManyToOne
+    @JsonIgnore
+    @MapsId("IdUniversityOffer")
+    @JoinColumn(name = "IdUniversityOffer")
+    private UniversityOffer universityOf;
+    @ManyToOne
+    @JsonIgnore
+    @MapsId("id")
+    @JoinColumn(name="id")
+    private  Women W;
 
 }

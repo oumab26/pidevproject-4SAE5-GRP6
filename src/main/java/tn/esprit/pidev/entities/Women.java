@@ -26,22 +26,22 @@ public class Women  extends User implements Serializable {
     private String image;
 /* Balti oumaima Offer*/
 
-    @OneToMany(mappedBy="womenCondidacy",cascade = CascadeType. ALL )
+    @OneToMany(mappedBy="womenCondidacy",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Condidacy> condid;
     /* Beldi Mona formation */
 
-    @OneToMany(mappedBy="women")
+    @OneToMany(mappedBy="women",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<TrainerEvaluation> trainerEvaluations;
 
 
-    @OneToMany(mappedBy="woman")
+    @OneToMany(mappedBy="woman",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Participation> participations;
 
 
 
     /* Khazri marwen  universities */
 
-    @OneToMany(mappedBy="W")
+    @OneToMany(mappedBy="W",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Request> requests;
 /*gouadria oumaima */
     @OneToMany (cascade = CascadeType.ALL,mappedBy = "Women")
