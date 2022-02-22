@@ -15,10 +15,10 @@ enum ExpertRole {
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Expert  extends User {
+public class Expert  extends User implements Serializable {
     @Enumerated(EnumType.STRING)
     private ExpertRole expertrole ;
 
-    @OneToMany (cascade = CascadeType.ALL,mappedBy = "Women")
+    @OneToMany (cascade = CascadeType.ALL,mappedBy = "Expert")
     private Set<Appoitment> appoitments;
 }
