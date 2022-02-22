@@ -1,20 +1,20 @@
 package tn.esprit.pidev.entities;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 /**
  * Post is an entity wich represent the post table
  * @author Samti Med Wael
  *
  */
+@Entity
 public class Post implements Serializable {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     /**
      * The id of the post
      */
@@ -46,6 +46,15 @@ public class Post implements Serializable {
      */
     @Enumerated(EnumType.STRING)
     private Category postCategory;
+
+
+    @OneToMany(mappedBy = "evaluatedPost",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Set<EvaluatePost> postEvaluations;
+
+
+    @ManyToOne
+    @JoinColumn(name ="user_id ")
+    private User postCreator;
 
 
     /**

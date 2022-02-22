@@ -16,7 +16,7 @@ public class EvaluatePostKey implements Serializable {
     @Column(name="post_id")
     private Long postId;
     @Column(name="user_id")
-    private Long userId;
+    private int userId;
     @Temporal(TemporalType.DATE)
     private Date interactionDate;
 
