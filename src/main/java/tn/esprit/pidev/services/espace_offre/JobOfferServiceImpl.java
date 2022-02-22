@@ -14,35 +14,36 @@ public class JobOfferServiceImpl implements IJobOfferService{
     private JobOfferRepository jobOfferRepository;
 
 
-
+    @Override
     public List<JobOffer> findAllJobOffer() {
-        return (List<JobOffer>)jobOfferRepository.findAll();
+        return jobOfferRepository.findAll();
+
     }
 
-
+    @Override
     public void save(JobOffer jobOffer) {
         jobOfferRepository.save(jobOffer);
     }
-/**
-
-    public JobOffer get(int id) {
-        return jobOfferRepository.findById((long) id).get();
-    }
 
     @Override
-    public void delete(int id) {
-        jobOfferRepository.deleteById((long) id);
+    public Optional<JobOffer> findById(int idOffer) {
+
+
+        return jobOfferRepository.findById(idOffer);
     }
 
 
 
-
-
+    @Override
+    public void delete(int idOffer) {
+        jobOfferRepository.deleteById(idOffer);
+    }
 
     @Override
-    public void update(JobOffer jobOffer, int idOffer)
-    {
+    public void update(JobOffer jobOffer) {
+
         jobOfferRepository.save(jobOffer);
+
     }
-**/
+
 }

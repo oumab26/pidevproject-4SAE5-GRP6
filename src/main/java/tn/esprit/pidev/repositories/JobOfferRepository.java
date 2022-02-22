@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import tn.esprit.pidev.entities.JobOffer;
 
 @Repository
-public interface  JobOfferRepository extends JpaRepository<JobOffer, Long> {
+public interface  JobOfferRepository extends JpaRepository<JobOffer, Integer> {
 
 
 
