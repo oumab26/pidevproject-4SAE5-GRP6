@@ -10,14 +10,13 @@ import java.io.Serializable;
 import java.util.Set;
 
 enum womenRole {
-    Student,Condidate,Lerner
-}
+    Student,Condidate,Lerner }
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Women  extends User {
+public class Women  extends User implements Serializable {
 
     private String statusCondidacy;
     @Enumerated(EnumType.STRING)
@@ -44,5 +43,11 @@ public class Women  extends User {
 
     @OneToMany(mappedBy="W",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Request> requests;
+/*gouadria oumaima */
+    @OneToMany (cascade = CascadeType.ALL,mappedBy = "Women")
+    private Set<Complaint> complaints;
+
+    @OneToOne
+    private Subscription subscription;
 
 }

@@ -16,7 +16,8 @@ enum Domain {
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Trainer extends User {
+
+public class Trainer extends User implements Serializable  {
 
     @Enumerated(EnumType.STRING)
     private Domain domain;

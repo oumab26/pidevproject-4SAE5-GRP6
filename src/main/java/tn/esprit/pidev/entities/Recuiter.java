@@ -14,7 +14,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Recuiter   extends User {
+public class Recuiter   extends User implements Serializable  {
 
 
 

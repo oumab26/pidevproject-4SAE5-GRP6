@@ -15,7 +15,7 @@ enum ExpertRole {
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Expert  extends User {
+public class Expert  extends User implements Serializable {
     @Enumerated(EnumType.STRING)
     private ExpertRole expertrole ;
 
