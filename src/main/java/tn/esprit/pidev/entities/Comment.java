@@ -33,6 +33,11 @@ public class Comment implements Serializable {
     private byte[] commentContent;
 
 
+    private String CommentContentType;
+
+    
+
+
     public Comment() {
     }
 
