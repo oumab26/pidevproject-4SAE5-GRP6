@@ -1,4 +1,7 @@
 # pidevproject-4SAE5-GRP6
 
-#creation des entités
-# crud 
+
+
+
+1creation des entités
+2 crud 
