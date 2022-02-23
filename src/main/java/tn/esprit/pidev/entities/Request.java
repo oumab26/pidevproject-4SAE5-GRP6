@@ -22,7 +22,7 @@ public class Request implements Serializable {
 
     @EmbeddedId
     private RequestPK requestPK;
-    private String Cv;
+   private boolean Etat;
     private String Message;
    /* @ManyToOne
     @JsonIgnore

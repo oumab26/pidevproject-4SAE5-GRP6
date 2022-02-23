@@ -6,8 +6,8 @@ import java.io.Serializable;
 
 @Embeddable
 public class TrainerEvaluationPK implements Serializable {
-    @Column(name="id_women")
-    private int idWomen;
+    @Column(name="id")
+    private int id;
     @Column(name="trainer_id")
     private int trainerId;
 }
