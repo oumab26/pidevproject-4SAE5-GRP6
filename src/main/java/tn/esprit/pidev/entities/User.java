@@ -50,5 +50,12 @@ public abstract class User  implements Serializable {
     @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private Set<Role> roles;
 
+    @OneToMany(mappedBy = "postCreator",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Set<Post> userPosts;
+
+
+    @OneToMany(mappedBy = "postEvaluator",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Set<EvaluatePost> evaluatePostSet;
+
 
 }
