@@ -28,6 +28,7 @@ public class JobofferController {
          jobService.save(jobOffer);
 
     }
+
     //update
 @PutMapping("/Jobs/Update")
 private JobOffer update(@RequestBody JobOffer jobOffer)
@@ -35,17 +36,22 @@ private JobOffer update(@RequestBody JobOffer jobOffer)
     jobService.save(jobOffer);
     return jobOffer;
 }
-//findbyid
+
+
+//delete
     @DeleteMapping("/Jobsdelete/{idOffer}")
     private void deleteJobs(@PathVariable("idOffer") int idOffer)
     {
         jobService.delete(idOffer);
     }
+
+
+
     //findbyid
     @GetMapping("/Jobs/{idOffer}")
-    private Optional<JobOffer> getJobs(@PathVariable("idOffer") int idOffer)
+    private Optional<JobOffer> getJobs(@PathVariable("idOffer") int   idOffer)
     {
-        return jobService.findById(idOffer);
+        return  jobService.findById(idOffer);
     }
 
 

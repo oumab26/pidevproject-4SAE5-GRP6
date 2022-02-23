@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import tn.esprit.pidev.entities.Interview;
 
 @Repository
-public interface InterviewRepository extends JpaRepository<Interview, Long> {
+public interface InterviewRepository extends JpaRepository<Interview, Integer> {
 
 
 }

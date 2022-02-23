@@ -22,6 +22,7 @@ public class JobOfferServiceImpl implements IJobOfferService{
 
     @Override
     public void save(JobOffer jobOffer) {
+
         jobOfferRepository.save(jobOffer);
     }
 
@@ -35,7 +36,8 @@ public class JobOfferServiceImpl implements IJobOfferService{
 
 
     @Override
-    public void delete(int idOffer) {
+    public void delete(int idOffer)
+    {
         jobOfferRepository.deleteById(idOffer);
     }
 

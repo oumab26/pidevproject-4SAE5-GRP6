@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Time;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -24,8 +25,10 @@ public class Interview implements Serializable {
     private int numTel;
     private String mail;
     private String webSite;
-    private String date;
-    private Time time;
+    @Temporal(TemporalType.DATE)
+    private Date date;
+    @Temporal(TemporalType.TIME)
+    private Date time;
     private  String link;
 
 
