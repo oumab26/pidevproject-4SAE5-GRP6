@@ -6,5 +6,5 @@ import tn.esprit.pidev.entities.Complaint;
 
 @Repository
 
-public interface ComplaintRepository extends JpaRepository<Complaint, Long> {
+public interface ComplaintRepository extends JpaRepository<Complaint, Integer> {
 }
