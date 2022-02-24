@@ -1,7 +1,5 @@
 package tn.esprit.pidev.services.subscriptions;
-
-import tn.esprit.pidev.entities.JobOffer;
-import tn.esprit.pidev.entities.Subscription;
+import tn.esprit.pidev.entities.*;
 
 import java.util.List;
 import java.util.Optional;

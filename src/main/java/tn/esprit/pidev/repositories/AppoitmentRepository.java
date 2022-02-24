@@ -6,5 +6,5 @@ import tn.esprit.pidev.entities.Appoitment;
 
 @Repository
 
-public interface AppoitmentRepository extends JpaRepository<Appoitment, Long> {
+public interface AppoitmentRepository extends JpaRepository<Appoitment, Integer> {
 }
