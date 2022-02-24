@@ -71,6 +71,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-multipart -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.4</version> <!-- makesure you put a correct version here -->
+        </dependency>
+
 
     </dependencies>
 
