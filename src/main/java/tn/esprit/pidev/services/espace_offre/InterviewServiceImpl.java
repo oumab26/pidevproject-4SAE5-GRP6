@@ -16,6 +16,7 @@ public class InterviewServiceImpl implements IInterviewService{
     private InterviewRepository interviewRepository;
     @Override
     public List<Interview> findAllInterview() {
+
         return interviewRepository.findAll();
     }
 
@@ -37,6 +38,7 @@ public class InterviewServiceImpl implements IInterviewService{
 
     @Override
     public void update(Interview interview) {
+
         interviewRepository.save(interview);
     }
 }
