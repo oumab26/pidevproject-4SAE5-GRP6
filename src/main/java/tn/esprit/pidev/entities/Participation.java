@@ -39,10 +39,12 @@ public class Participation implements Serializable {
 
     @ManyToOne
     @MapsId("trainingId")
+    @JsonIgnore
     @JoinColumn(name = "training_id")
     private Training trai;
     @ManyToOne
     @MapsId("id")
+    @JsonIgnore
     @JoinColumn(name= "id")
     private  Women woman;
 

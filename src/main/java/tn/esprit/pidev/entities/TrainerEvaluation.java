@@ -29,15 +29,17 @@ public class TrainerEvaluation implements Serializable {
     private Trainer trainerEv;
 
     @ManyToOne
-    @JsonIgnore
+    @JsonIgnores
     private Women women;*/
 
     @ManyToOne
     @MapsId("id")
+    @JsonIgnore
     @JoinColumn(name = "id")
     private Women women;
     @ManyToOne
     @MapsId("trainerId")
+    @JsonIgnore
     @JoinColumn(name= "trainer_id")
     private Trainer trainerEv;
 

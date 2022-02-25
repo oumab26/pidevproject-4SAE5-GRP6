@@ -28,10 +28,12 @@ public class Condidacy implements Serializable {
 
     @ManyToOne
     @MapsId("id")
+    @JsonIgnore
     @JoinColumn(name="id")
     private Women womenCondidacy;
     @ManyToOne
     @MapsId("idOffer")
+    @JsonIgnore
     @JoinColumn(name="id_Offer")
     private JobOffer jobOfferCon;
 

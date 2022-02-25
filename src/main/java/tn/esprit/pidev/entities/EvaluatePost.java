@@ -1,4 +1,6 @@
 package tn.esprit.pidev.entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -12,10 +14,12 @@ public class EvaluatePost implements Serializable {
     private Rating rating;
     @ManyToOne
     @MapsId("userId")
+    @JsonIgnore
     @JoinColumn(name = "user_id")
     private User postEvaluator;
     @ManyToOne
     @MapsId("postId")
+    @JsonIgnore
     @JoinColumn(name= "post_id")
     private Post evaluatedPost;
 
