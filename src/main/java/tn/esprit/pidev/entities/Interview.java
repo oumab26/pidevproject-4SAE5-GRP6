@@ -36,4 +36,21 @@ public class Interview implements Serializable {
     @OneToOne(mappedBy = "interv")
     private JobOffer  joboffer;
 
+
+
+
+    public Interview(String link, Integer idInterview, java.sql.Date date, String mail, String description, String title, Time time,String webSite,Integer numTel) {
+        this.link=link;
+        this.idInterview=idInterview;
+        this.date=date;
+        this.mail=mail;
+        this.description=description;
+        this.title=title;
+        this.time=time;
+        this.webSite=webSite;
+        this.numTel=numTel;
+
+
+
+    }
 }

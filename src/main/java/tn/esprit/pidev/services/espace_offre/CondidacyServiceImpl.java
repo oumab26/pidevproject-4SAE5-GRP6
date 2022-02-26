@@ -23,8 +23,13 @@ public class CondidacyServiceImpl implements ICondidacyService {
     public void save(Condidacy condidacy) {
        condidacyRepository.save(condidacy);
     }
+/**
+    @Override
+    public List<Condidacy> findByIdAndId_Offer(int id, int id_Offer) {
+        return condidacyRepository.findByIdAndId_Offer(id,id_Offer);
+    }
 
-
+**/
 
     @Override
     public void update(Condidacy condidacy) {

@@ -21,21 +21,21 @@ enum Status {
 public class Condidacy implements Serializable {
     @EmbeddedId
     private CondidacyPK condidacyPK;
-
+    @Enumerated(EnumType.STRING)
     private Status status;
+    private boolean  favorie=false ;
     @Temporal(TemporalType.DATE)
     private Date dateCondidacy;
 
     @ManyToOne
     @JsonIgnore
     @MapsId("id")
-
     @JoinColumn(name="id")
     private Women womenCondidacy;
+
     @ManyToOne
     @JsonIgnore
     @MapsId("idOffer")
-
     @JoinColumn(name="id_Offer")
     private JobOffer jobOfferCon;
 

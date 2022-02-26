@@ -17,7 +17,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Inheritance(strategy = InheritanceType.JOINED)
 
-public abstract class User  implements Serializable {
+public class User  implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -51,4 +51,9 @@ public abstract class User  implements Serializable {
     private Set<Role> roles;
 
 
+    public User(Integer id, String email) {
+
+        this.id=id;
+        this.email=email;
+    }
 }

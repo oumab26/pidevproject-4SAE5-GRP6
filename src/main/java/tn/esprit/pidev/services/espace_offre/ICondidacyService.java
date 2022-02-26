@@ -12,8 +12,8 @@ public interface ICondidacyService {
 
     public List<Condidacy> findAllCondidacy();
     public void save(Condidacy condidacy);
- /**   public Optional<Condidacy> findById(int id,int id_Offer);
-    public void delete(int id,int id_Offer);    **/
+ //public List<Condidacy> findByIdAndId_Offer(int id,int id_Offer);
+  //  public void delete(int id,int id_Offer);
     public void update(Condidacy condidacy);
 
 }
