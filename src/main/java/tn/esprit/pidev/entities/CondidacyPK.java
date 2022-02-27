@@ -3,6 +3,8 @@ package tn.esprit.pidev.entities;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Optional;
 
 @Embeddable
 public class CondidacyPK implements Serializable {
@@ -10,4 +12,6 @@ public class CondidacyPK implements Serializable {
     private int idOffer;
     @Column(name="id")
     private int id;
+
+  
 }

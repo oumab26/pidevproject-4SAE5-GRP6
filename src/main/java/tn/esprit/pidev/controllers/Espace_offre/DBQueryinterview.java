@@ -18,7 +18,7 @@ public class DBQueryinterview {
         try {
             //new user added remove if error occur
 
-            String query = "SELECT * FROM Interview,Job_Offer WHERE Job_Offer.interv_id_interview=Interview.id_interview;  ";
+            String query = "SELECT * FROM Interview,Job_Offer WHERE Job_Offer.interv_id_interview=Interview.id_interview && interview.date >=CURDATE();  ";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(query);
             while(rs.next()) {

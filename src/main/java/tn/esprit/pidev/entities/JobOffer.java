@@ -11,11 +11,6 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
-
-enum Domaine {
-    Agriculture,ENSEIGNEMENT,Hôtellerie,Alimentaire,Banque,Chimie,Santé,Télécommunications,Textile,Ingénieurie,Batiment,Art,Artisanat,
-    Transport,Industrie,Restauration,Commerce,Tourisme,Sport,Environement
-}
 @Entity
 @Getter
 @Setter
@@ -31,8 +26,9 @@ public class JobOffer implements Serializable {
     private int idOffer;
     private String titleOffer;
     private String description;
+
     @Enumerated(EnumType.STRING)
-    private Domaine Domaine;
+    private Domaine domaine;
     @Temporal(TemporalType.DATE)
     private Date startDateoffer;
     @Temporal(TemporalType.DATE)

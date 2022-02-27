@@ -2,8 +2,13 @@ package tn.esprit.pidev.controllers.Espace_offre;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import tn.esprit.pidev.entities.Domaine;
 import tn.esprit.pidev.entities.JobOffer;
+import tn.esprit.pidev.repositories.JobOfferRepository;
 import tn.esprit.pidev.services.espace_offre.JobOfferServiceImpl;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,6 +17,7 @@ import java.util.Optional;
 public class JobofferController {
     @Autowired
     private JobOfferServiceImpl jobService;
+    private JobOfferRepository   jobOfferRepository;
 //affichage
     @GetMapping("/Jobs")
     public List<JobOffer> getAllJobs()
@@ -56,5 +62,22 @@ private JobOffer update(@RequestBody JobOffer jobOffer)
 
 
 
+
+// search par title +   address  +  company
+    @GetMapping("/Search/{keyword}")
+    public List<JobOffer> search(@PathVariable("keyword") String keyword) {
+        List<JobOffer> jb = new ArrayList<>();
+       this.jobService.listAllSearch(keyword).forEach(jb::add);
+       return jb;
+    }
+
+
+
+//search par  domaine
+@GetMapping(value = "/Search/Domaine/{domaine}" )
+    public  List<JobOffer> getJobByDomaine(@PathVariable("domaine") Domaine domaine) {
+        return jobService.findByDomaine(domaine);
+
+    }
 
 }

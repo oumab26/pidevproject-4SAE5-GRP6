@@ -2,6 +2,9 @@ package tn.esprit.pidev.services.espace_offre;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tn.esprit.pidev.entities.CondidacyPK;
+
+import tn.esprit.pidev.entities.Domaine;
 import tn.esprit.pidev.entities.JobOffer;
 import tn.esprit.pidev.repositories.JobOfferRepository;
 
@@ -9,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class JobOfferServiceImpl implements IJobOfferService{
+public class JobOfferServiceImpl implements IJobOfferService {
     @Autowired
     private JobOfferRepository jobOfferRepository;
 
@@ -48,4 +51,23 @@ public class JobOfferServiceImpl implements IJobOfferService{
 
     }
 
+    @Override
+    public List<JobOffer> listAllSearch(String keyword) {
+        if (keyword != null) {
+            return  jobOfferRepository.search(keyword);
+        }
+        return  jobOfferRepository.findAll();
+    }
+
+
+    public List<JobOffer> findByDomaine(Domaine domaine) {
+        return  jobOfferRepository.findByDomaine(domaine);
+
+    }
+
+
+
+
+
 }
+
