@@ -33,6 +33,17 @@ public class Comment implements Serializable {
     private byte[] commentContent;
 
 
+    private String CommentContentType;
+
+
+    public String getCommentContentType() {
+        return CommentContentType;
+    }
+
+    public void setCommentContentType(String commentContentType) {
+        CommentContentType = commentContentType;
+    }
+
     public Comment() {
     }
 

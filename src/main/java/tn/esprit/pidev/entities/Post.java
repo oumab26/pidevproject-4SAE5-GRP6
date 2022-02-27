@@ -23,6 +23,15 @@ public class Post implements Serializable {
      * The post title
      */
     private String postTitle;
+
+    /**
+     * The post title
+     */
+    private String postDescription;
+
+
+    private String postContentType;
+
     /**
      * The creation date of the post
      */
@@ -138,5 +147,41 @@ public class Post implements Serializable {
      */
     public void setPostCatgory(Category postCategory) {
         this.postCategory = postCategory;
+    }
+
+    public String getPostDescription() {
+        return postDescription;
+    }
+
+    public void setPostDescription(String postDescription) {
+        this.postDescription = postDescription;
+    }
+
+    public void setPostCategory(Category postCategory) {
+        this.postCategory = postCategory;
+    }
+
+    public Set<EvaluatePost> getPostEvaluations() {
+        return postEvaluations;
+    }
+
+    public void setPostEvaluations(Set<EvaluatePost> postEvaluations) {
+        this.postEvaluations = postEvaluations;
+    }
+
+    public User getPostCreator() {
+        return postCreator;
+    }
+
+    public void setPostCreator(User postCreator) {
+        this.postCreator = postCreator;
+    }
+
+    public String getPostContentType() {
+        return postContentType;
+    }
+
+    public void setPostContentType(String postContentType) {
+        this.postContentType = postContentType;
     }
 }
